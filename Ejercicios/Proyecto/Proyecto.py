@@ -41,15 +41,69 @@ def EnterMove(board):
         EnterMove(board)
 
 
-def nextMove(contMove):
+def Winner(board):
+    global contMove
+    if board[1] == "O" and board[2] == "O" and board[3] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[1] == "O" and board[5] == "O" and board[9] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[1] == "O" and board[4] == "O" and board[7] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[2] == "O" and board[5] == "O" and board[8] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[3] == "O" and board[6] == "O" and board[9] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[3] == "O" and board[5] == "O" and board[7] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[4] == "O" and board[5] == "O" and board[6] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[7] == "O" and board[8] == "O" and board[9] == "O":
+        print("El ganador es el jugador")
+        contMove = 9
+    elif board[1] == "X" and board[2] == "X" and board[3] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[1] == "X" and board[5] == "X" and board[9] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[1] == "X" and board[4] == "X" and board[7] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[2] == "X" and board[5] == "X" and board[8] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[3] == "X" and board[6] == "X" and board[9] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[3] == "X" and board[5] == "X" and board[7] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[4] == "X" and board[5] == "X" and board[6] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+    elif board[7] == "X" and board[8] == "X" and board[9] == "X":
+        print("El ganador es la CPU")
+        contMove = 9
+
+
+def NextMove():
+    global contMove
     while contMove <= 8:
-        DisplayBoard(board)
         DrawMove(board)
         DisplayBoard(board)
         EnterMove(board)
         DisplayBoard(board)
         os.system('cls')
-        nextMove(contMove)
+        Winner(board)
+        NextMove()
 
 
-nextMove(contMove)
+DisplayBoard(board)
+NextMove()
